@@ -116,7 +116,7 @@ body {
     color: inherit;
 }
 
-.search button {
+.search_btn {
     background-image: url("images/icon\ \(4\).png");
     background-repeat: no-repeat;
     background-position: center;
@@ -126,7 +126,7 @@ body {
     margin: 4px;
 }
 
-.case>button {
+.case_btn {
     background-image: url("images/icon\ \(1\).png");
     background-repeat: no-repeat;
     background-position: center;
