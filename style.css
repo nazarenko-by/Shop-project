@@ -186,3 +186,10 @@ body {
     color: #2c71b8;
 }
 
+.submenu>a::after{
+    content: "\f078";
+    font-family: FontAwesome;
+    margin-left: 5px;
+    font-size: 10px; 
+    vertical-align: 2px;  
+}
