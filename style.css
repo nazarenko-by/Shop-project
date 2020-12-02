@@ -44,6 +44,10 @@ body {
     width: 50%;
 }
 
+.col-md-9 {
+    width: 75%;
+}
+
 .logo {
     margin-top: 8px;
 }
