@@ -117,7 +117,7 @@ body {
 }
 
 .search input {
-    width: 155px;
+    width: 154px;
     height: 38px;
     line-height: 38px;
     font-size: 20px;
@@ -220,9 +220,26 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.choice {
+.filter {
     height: 843px;
     background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 21px;
+    padding: 30px 25px;
+}
+
+.filter_head{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.filter li{
+    margin-top: 20px;
+}
+
+.filter a{
+    color: inherit;
+    text-decoration: none;
 }
 
 .page-map {
