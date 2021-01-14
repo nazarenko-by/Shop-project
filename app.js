@@ -32,3 +32,29 @@ modal.addEventListener("click", function(e){
         closeModal();
     }
 })
+
+//like
+let likeEl = document.querySelectorAll(".like")
+
+likeEl.forEach((like)=>{
+    like.addEventListener("click", function(){
+        if(like.classList.length == 1){
+            like.classList.add("like-on");
+        } else{
+            like.classList.remove("like-on");
+        }    
+    })
+})
+
+//focus
+let focusEl = document.querySelectorAll(".focus")
+
+focusEl.forEach((focus)=>{
+    focus.addEventListener("click", function(){
+        if(focus.classList.length == 1){
+            focus.classList.add("focus-on");
+        } else{
+            focus.classList.remove("focus-on");
+        }    
+    })
+})
