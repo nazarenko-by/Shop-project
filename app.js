@@ -15,10 +15,14 @@ let closeBtn = document.querySelector(".btn-close")
 
 moreDetailsClass.forEach((btn)=>{
     btn.addEventListener("click", function(){
-       modal.classList.add("show")
-       modal.classList.remove("hide")
+        openModal();
     })
 } )
+
+function openModal(){
+    modal.classList.add("show")
+       modal.classList.remove("hide")
+}
 
 function closeModal(){
     modal.classList.add("hide")
