@@ -42,11 +42,12 @@ let likeEl = document.querySelectorAll(".like")
 
 likeEl.forEach((like)=>{
     like.addEventListener("click", function(){
-        if(like.classList.length == 1){
-            like.classList.add("like-on");
-        } else{
-            like.classList.remove("like-on");
-        }    
+        like.classList.toggle("like-on");
+        // if(like.classList.contains("like-on")){
+        //     like.classList.add("like-on");
+        // } else{
+        //     like.classList.remove("like-on");
+        // }    
     })
 })
 
