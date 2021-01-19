@@ -42,12 +42,7 @@ let likeEl = document.querySelectorAll(".like")
 
 likeEl.forEach((like)=>{
     like.addEventListener("click", function(){
-        like.classList.toggle("like-on");
-        // if(like.classList.contains("like-on")){
-        //     like.classList.add("like-on");
-        // } else{
-        //     like.classList.remove("like-on");
-        // }    
+        like.classList.toggle("like-on");  
     })
 })
 
@@ -63,3 +58,42 @@ focusEl.forEach((focus)=>{
         }    
     })
 })
+
+//change product count
+let decrementBtn = document.querySelectorAll(".decrement-button");
+let incrementBtn = document.querySelectorAll(".increment-button");
+let quantityValue = document.querySelectorAll(".product-quantity input");
+
+let minCount = 1;
+let maxCount = 10;
+function toggelButtonState(count, i){
+    incrementBtn[i].disabled = count >= maxCount;
+    decrementBtn[i].disabled = count <= minCount;
+}
+
+quantityValue.forEach((item, i) =>{
+    let count = item.value;
+    toggelButtonState(count, i)
+})
+
+incrementBtn.forEach((item, i) =>{
+    item.addEventListener("click",function(){
+    let currentCount = +quantityValue[i].value;
+    let nextCount = currentCount + 1;
+    quantityValue[i].value = nextCount;
+    toggelButtonState(nextCount,i);
+})
+} )
+
+decrementBtn.forEach((item, i) =>{
+    item.addEventListener("click",function(){
+    let currentCount = +quantityValue[i].value;
+    let prevCount = currentCount - 1;
+    quantityValue[i].value = prevCount;
+    toggelButtonState(prevCount,i);
+}) 
+})
+
+
+
+// console.log(decrementBtn, incrementBtn, quantityValue)

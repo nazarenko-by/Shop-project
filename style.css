@@ -498,3 +498,11 @@ input[type="checkbox"]:checked + label::before{
 .show{
     display: block;
 }
+
+.product-quantity, .product-quantity input{
+    text-align: center;
+}
+
+.product-quantity button{
+    padding: 3px 8px;
+}
