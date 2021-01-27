@@ -64,36 +64,46 @@ let decrementBtn = document.querySelectorAll(".decrement-button");
 let incrementBtn = document.querySelectorAll(".increment-button");
 let quantityValue = document.querySelectorAll(".product-quantity input");
 
-let minCount = 1;
-let maxCount = 10;
-function toggelButtonState(count, i){
-    incrementBtn[i].disabled = count >= maxCount;
-    decrementBtn[i].disabled = count <= minCount;
+function Counter(incrementBtn, decrementBtn, quantityValue, minCount = 1, maxCount = 10){
+    this.domRefs = {
+        incrementBtn,
+        decrementBtn,
+        quantityValue,
+    }
+    this.toggelButtonState = function(){
+        let count = this.domRefs.quantityValue.value;
+        this.domRefs.incrementBtn.disabled = count >= maxCount;
+        if(this.domRefs.incrementBtn.disabled){
+           this.domRefs.incrementBtn.classList.add("disabled"); 
+        } else{
+            this.domRefs.incrementBtn.classList.remove("disabled");
+        }
+        this.domRefs.decrementBtn.disabled = count <= minCount;
+        if(this.domRefs.decrementBtn.disabled){
+            this.domRefs.decrementBtn.classList.add("disabled"); 
+         } else{
+             this.domRefs.decrementBtn.classList.remove("disabled");
+         }
+    }
+
+    this.increment = function(){
+        let currentCount = +this.domRefs.quantityValue.value;
+        let nextCount = currentCount + 1;
+        this.domRefs.quantityValue.value = nextCount;
+        this.toggelButtonState();
+    }
+    this.decrement = function(){
+        let currentCount = +this.domRefs.quantityValue.value;
+        let nextCount = currentCount -1;
+        this.domRefs.quantityValue.value = nextCount;
+        this.toggelButtonState();
+    }
+
+    this.domRefs.decrementBtn.addEventListener("click", this.decrement.bind(this))
+    this.domRefs.incrementBtn.addEventListener("click", this.increment.bind(this))
+
+    this.toggelButtonState();
 }
-
-quantityValue.forEach((item, i) =>{
-    let count = item.value;
-    toggelButtonState(count, i)
+quantityValue.forEach((item, i) => {
+    new Counter(incrementBtn[i], decrementBtn[i], quantityValue[i]);
 })
-
-incrementBtn.forEach((item, i) =>{
-    item.addEventListener("click",function(){
-    let currentCount = +quantityValue[i].value;
-    let nextCount = currentCount + 1;
-    quantityValue[i].value = nextCount;
-    toggelButtonState(nextCount,i);
-})
-} )
-
-decrementBtn.forEach((item, i) =>{
-    item.addEventListener("click",function(){
-    let currentCount = +quantityValue[i].value;
-    let prevCount = currentCount - 1;
-    quantityValue[i].value = prevCount;
-    toggelButtonState(prevCount,i);
-}) 
-})
-
-
-
-// console.log(decrementBtn, incrementBtn, quantityValue)
