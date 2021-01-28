@@ -47,7 +47,7 @@ likeEl.forEach((like)=>{
 })
 
 //focus
-let focusEl = document.querySelectorAll(".focus")
+let focusEl = document.querySelectorAll(".focus-product")
 
 focusEl.forEach((focus)=>{
     focus.addEventListener("click", function(){
@@ -112,4 +112,15 @@ quantityValue.forEach((item, i) => {
 
 $(".slider-block").slick({
     dots:true,
+});
+
+//select
+
+$('#select').selectize({
+    options: [
+        {value: "name", name: "Sort by name" },
+        {value: "price", name: "Sort by price" },
+        {value: "popolarity", name: "Sort by popolarity" }
+    ],
+     labelField: 'name',
 });

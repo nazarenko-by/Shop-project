@@ -361,7 +361,7 @@ input[type="checkbox"]:checked + label::before{
     position: relative;
 }
 
-.focus,
+.focus-product,
 .like {
     width: 30px;
     height: 30px;
@@ -372,12 +372,12 @@ input[type="checkbox"]:checked + label::before{
     background-position: center;
 }
 
-.focus {
+.focus-product {
     background-image: url(images/icon\ \(8\).png);
     top: 10px;
 }
 
-.focus:hover, .focus-on {
+.focus-product:hover, .focus-on {
     background-image: url(images/icon\ \(6\).png);
     background-color: #2c71b8;
 }
@@ -549,3 +549,41 @@ input[type="checkbox"]:checked + label::before{
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
 }
+
+.select{
+    width: 100%;
+}
+
+.focus{
+    width: 100%;
+}
+
+.selectize-input{
+    background-color: #2c71b8;
+    border-radius: 0;
+}
+
+.selectize-dropdown, .selectize-input, .selectize-input input{
+    color: white;
+    background-color: #2c71b8;
+    border-radius: 0%;
+}
+.selectize-input.full{
+    background-color: #2c71b8;
+}
+.selectize-input,.selectize-control.single .selectize-input.input-active{
+    background-color: #2c71b8;
+    border-radius: 0%;
+}
+
+.selectize-input input::placeholder{
+    color: #fff;
+}
+
+.selectize-control.single .selectize-input:after{
+    border-top-color:#fff;
+}
+
+.selectize-control.single .selectize-input.dropdown-active::after{
+    border-bottom-color:#fff;
+} 
