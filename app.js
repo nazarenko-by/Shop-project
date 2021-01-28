@@ -107,3 +107,9 @@ function Counter(incrementBtn, decrementBtn, quantityValue, minCount = 1, maxCou
 quantityValue.forEach((item, i) => {
     new Counter(incrementBtn[i], decrementBtn[i], quantityValue[i]);
 })
+
+//slider
+
+$(".slider-block").slick({
+    dots:true,
+});

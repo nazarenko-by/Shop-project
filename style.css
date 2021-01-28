@@ -217,7 +217,35 @@ body {
     font-size: 100px;
     line-height: 400px;
     color: white;
+    
+}
+
+.slider-bg{
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.slick-dots{
+    bottom: 30px;
+}
+
+.slick-dots li button:before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: white 1px solid;
+    opacity: 1;
+}
+
+.slick-dots li.slick-active button:before{
+    background-color: white;
+}
+
+.slick-prev:before{
+    content: url("images/prev.png");    
+}
+
+.slick-next:before{
+    content: url("images/next.png");    
 }
 
 .filter {
